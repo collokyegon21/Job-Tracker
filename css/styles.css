@@ -26,7 +26,6 @@ section {
   scroll-margin-top: 85px;
 }
 
-/* Navigation */
 .navbar {
   padding: 14px 0;
   border-bottom: 1px solid var(--border);
@@ -44,17 +43,6 @@ section {
 
 .navbar-brand:hover {
   color: var(--primary);
-}
-
-.brand-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  color: #fff;
-  background: var(--primary);
 }
 
 .navbar-nav {
@@ -87,9 +75,8 @@ section {
   font-weight: 600;
 }
 
-/* Hero section */
 .hero-section {
-  padding: 85px 0 75px;
+  padding: 75px 0 75px;
   background: linear-gradient(135deg, #eff6ff, #ffffff 70%);
 }
 
@@ -143,33 +130,6 @@ section {
 .search-box .btn {
   min-height: 46px;
   font-weight: 600;
-}
-
-.popular-searches {
-  margin-top: 15px;
-  color: var(--text);
-  font-size: 0.85rem;
-}
-
-.hero-card {
-  padding: 40px 32px;
-  border: 1px solid #dbeafe;
-  border-radius: 22px;
-  background: #fff;
-  box-shadow: 0 20px 55px rgba(37, 99, 235, 0.08);
-}
-
-.hero-card-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  margin-bottom: 24px;
-  border-radius: 16px;
-  color: var(--primary);
-  background: #eff6ff;
-  font-size: 1.8rem;
 }
 
 .hero-card h3 {
@@ -239,7 +199,6 @@ section {
   font-weight: 800;
 }
 
-/* Main content sections */
 .content-section {
   padding: 75px 0;
 }

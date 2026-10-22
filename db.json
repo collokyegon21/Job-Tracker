@@ -1,7 +1,7 @@
 {
   "jobs": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Junior Web Developer",
       "company": "Savanna Digital",
       "category": "Software Development",
@@ -11,7 +11,7 @@
       "description": "Build and maintain client websites using HTML, CSS and JavaScript. Work with a small team and learn code review practices."
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Mobile App Developer (Android)",
       "company": "Mkononi Labs",
       "category": "Software Development",
@@ -21,7 +21,7 @@
       "description": "Develop Android features in Kotlin and Java, integrate REST APIs and fix bugs reported by users."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Frontend Developer Intern",
       "company": "Pwani Tech",
       "category": "Software Development",
@@ -31,7 +31,7 @@
       "description": "Three-month internship building responsive interfaces with Bootstrap and vanilla JavaScript."
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Backend Developer (Node.js)",
       "company": "Ujuzi Systems",
       "category": "Software Development",
@@ -41,7 +41,7 @@
       "description": "Design REST endpoints, write database queries and document APIs for a fintech platform."
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "QA Tester",
       "company": "Kilimo Connect",
       "category": "Quality Assurance",
@@ -51,7 +51,7 @@
       "description": "Write test cases, report bugs and verify fixes on a farmer marketplace app."
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Data Entry and Reporting Assistant",
       "company": "Jamii Health Network",
       "category": "Data",
@@ -61,7 +61,7 @@
       "description": "Capture records accurately, clean spreadsheets and prepare weekly summary reports."
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Data Analyst Intern",
       "company": "Takwimu Analytics",
       "category": "Data",
@@ -71,7 +71,7 @@
       "description": "Analyse survey data with Excel and SQL and build simple dashboards for the research team."
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Junior Data Analyst",
       "company": "Hesabu Insights",
       "category": "Data",
@@ -81,7 +81,7 @@
       "description": "Clean datasets, write SQL queries and present findings to non-technical clients."
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "UI/UX Design Intern",
       "company": "Rangi Studio",
       "category": "Design",
@@ -91,7 +91,7 @@
       "description": "Create wireframes and prototypes in Figma and take part in user testing sessions."
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Graphic Designer",
       "company": "Mwanga Media",
       "category": "Design",
@@ -101,7 +101,7 @@
       "description": "Design social media graphics and brand assets for local businesses."
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "IT Support Technician",
       "company": "Daraja Networks",
       "category": "IT Support",
@@ -111,7 +111,7 @@
       "description": "Set up laptops, troubleshoot network issues and manage user accounts."
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Help Desk Associate",
       "company": "Msingi Bank Services",
       "category": "IT Support",
@@ -121,7 +121,7 @@
       "description": "Respond to staff tickets, document fixes and escalate complex issues."
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "Digital Marketing Assistant",
       "company": "Soko Online",
       "category": "Marketing",
@@ -131,7 +131,7 @@
       "description": "Schedule posts, track campaign results and write short product descriptions."
     },
     {
-      "id": 14,
+      "id": "14",
       "title": "Content Writer",
       "company": "Hadithi Hub",
       "category": "Marketing",
@@ -141,7 +141,7 @@
       "description": "Write blog posts and newsletters on technology and careers for a young audience."
     },
     {
-      "id": 15,
+      "id": "15",
       "title": "Customer Success Representative",
       "company": "Karibu Cloud",
       "category": "Customer Support",
@@ -151,7 +151,7 @@
       "description": "Answer customer questions by chat and email and collect product feedback."
     },
     {
-      "id": 16,
+      "id": "16",
       "title": "Laboratory Information Systems Assistant",
       "company": "Afya Diagnostics",
       "category": "Healthcare Tech",
@@ -161,7 +161,7 @@
       "description": "Support lab staff in using records software, check data accuracy and train users."
     },
     {
-      "id": 17,
+      "id": "17",
       "title": "Junior DevOps Engineer",
       "company": "Anga Cloud",
       "category": "Software Development",
@@ -171,7 +171,7 @@
       "description": "Help maintain deployment pipelines, monitor servers and automate routine tasks."
     },
     {
-      "id": 18,
+      "id": "18",
       "title": "Technical Writer",
       "company": "Maelezo Docs",
       "category": "Software Development",
@@ -181,7 +181,7 @@
       "description": "Write clear API guides and tutorials for developers."
     },
     {
-      "id": 19,
+      "id": "19",
       "title": "Project Coordinator",
       "company": "Ujenzi Youth Fund",
       "category": "Operations",
@@ -191,7 +191,7 @@
       "description": "Track project tasks, schedule meetings and prepare monthly progress updates."
     },
     {
-      "id": 20,
+      "id": "20",
       "title": "Sales Development Representative",
       "company": "Biashara Hub",
       "category": "Sales",
@@ -201,5 +201,39 @@
       "description": "Find new leads, book demos and update the CRM daily."
     }
   ],
-  "applications": []
+  "applications": [
+    {
+      "jobId": "20",
+      "jobTitle": "Sales Development Representative",
+      "company": "Biashara Hub",
+      "dateApplied": "2026-10-22",
+      "status": "Applied",
+      "id": "HcO4-eGoURk"
+    },
+    {
+      "jobId": "19",
+      "jobTitle": "Project Coordinator",
+      "company": "Ujenzi Youth Fund",
+      "dateApplied": "2026-10-22",
+      "status": "Applied",
+      "id": "MJwVEEN8S3A"
+    },
+    {
+      "jobId": "8",
+      "jobTitle": "Junior Data Analyst",
+      "company": "Hesabu Insights",
+      "dateApplied": "2026-10-22",
+      "status": "Applied",
+      "id": "MJlWw97eOmE"
+    },
+    {
+      "jobId": "2",
+      "jobTitle": "Mobile App Developer (Android)",
+      "company": "Mkononi Labs",
+      "dateApplied": "2026-10-22",
+      "status": "Applied",
+      "id": "D8xdG1k23rE"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
