@@ -115,68 +115,7 @@ function showJobs(list = jobs) {
       );
 
       return `
-            <div class="col-md-6 col-lg-4">
-                <article class="job-card">
-                    <div class="job-card-top">
-                  
-
-                        <span class="job-type-badge">
-                            ${job.type}
-                        </span>
-                    </div>
-
-                    <h5>${job.title}</h5>
-
-                    <p class="job-company">
-                        ${job.company}
-                    </p>
-
-                    <div class="job-meta">
-                        <span>
-                            <i class="bi bi-geo-alt"></i>
-                            ${job.location}
-                        </span>
-
-                        <span>
-                            <i class="bi bi-calendar3"></i>
-                            ${job.datePosted}
-                        </span>
-                    </div>
-
-                    <p class="job-description">
-                        ${job.description}
-                    </p>
-
-                    <div class="mb-3">
-                        <span class="job-type-badge">
-                            ${job.category}
-                        </span>
-                    </div>
-
-                    <div class="job-actions">
-                        <button
-                            class="btn btn-primary apply-job"
-                            data-id="${job.id}"
-                            ${application ? "disabled" : ""}
-                        >
-                            ${application ? "Applied" : "Apply"}
-                        </button>
-
-                        <button
-                            class="btn btn-outline-secondary save-job ${
-                              isSaved ? "saved" : ""
-                            }"
-                            data-id="${job.id}"
-                            aria-label="${isSaved ? "Remove saved job" : "Save job"}"
-                            aria-pressed="${isSaved}"
-                        >
-                            <i class="bi ${
-                              isSaved ? "bi-bookmark-fill" : "bi-bookmark"
-                            }"></i>
-                        </button>
-                    </div>
-                </article>
-            </div>
+            
         `;
     })
     .join("");
