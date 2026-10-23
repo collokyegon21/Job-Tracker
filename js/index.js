@@ -35,7 +35,6 @@ function saveSavedJobs() {
   localStorage.setItem("jobtracker-saved", JSON.stringify(savedJobs));
 }
 
-// Reusable API helper.
 async function apiRequest(endpoint, options = {}) {
   const response = await fetch(`${API_URL}${endpoint}`, {
     ...options,
@@ -58,7 +57,6 @@ async function apiRequest(endpoint, options = {}) {
   return response.json();
 }
 
-// Display API and network errors in the relevant section.
 function showMessage(container, message) {
   container.innerHTML = `
         <div class="col-12">
@@ -68,8 +66,6 @@ function showMessage(container, message) {
         </div>
     `;
 }
-
-// ================= FETCH JOBS =================
 
 async function fetchJobs() {
   try {
@@ -94,8 +90,6 @@ async function fetchJobs() {
   }
 }
 
-// ================= FETCH APPLICATIONS =================
-
 async function fetchApplications() {
   try {
     applications = await apiRequest("/applications");
@@ -118,8 +112,6 @@ async function fetchApplications() {
         `;
   }
 }
-
-// ================= FIND JOBS =================
 
 function showJobs(list = jobs) {
   document.getElementById("job-results-message").textContent =
@@ -215,7 +207,6 @@ function showJobs(list = jobs) {
     .join("");
 }
 
-// Search jobs by title, company, description, or category.
 function filterJobs() {
   const keyword = jobSearch.value.trim().toLowerCase();
   const location = jobLocation.value.trim().toLowerCase();
@@ -421,8 +412,6 @@ async function applyForJob(id) {
   }
 }
 
-// ================= MY APPLICATIONS =================
-
 function showApplications() {
   if (applications.length === 0) {
     applicationList.innerHTML = `
@@ -556,16 +545,11 @@ function updateDashboard() {
     (app) => app.status === "Interview",
   ).length;
 
-
-
   document.getElementById("available-count").textContent = jobs.length;
   document.getElementById("application-count").textContent = total;
   document.getElementById("saved-count").textContent = savedJobs.length;
   document.getElementById("interview-count").textContent = interviews;
-
 }
-
-
 
 // Handles buttons in both Find Jobs and Saved Jobs.
 document.addEventListener("click", (event) => {
@@ -599,8 +583,6 @@ document.querySelectorAll(".navbar .nav-link, .nav-cta").forEach((link) => {
     });
   });
 });
-
-// ================= INITIALIZE APP =================
 
 document.getElementById("current-year").textContent = new Date().getFullYear();
 
