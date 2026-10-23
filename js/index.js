@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000";
+const API_URL = "https://collokyegon21.github.io/Job-Tracker/db.json";
 
 let jobs = [];
 let applications = [];
