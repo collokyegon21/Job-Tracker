@@ -1,4 +1,6 @@
-const API_URL = "https://collokyegon21.github.io/Job-Tracker/db.json";
+const API_URL = "http://localhost:3000";
+//const API_URL = "https://raw.githubusercontent.com/collokyegon21/Job-Tracker/main/db.json";
+//const API_URL = "https://collokyegon21.github.io/Job-Tracker/db.json";
 
 let jobs = [];
 let applications = [];
@@ -32,7 +34,7 @@ function readSavedJobs() {
 let savedJobs = readSavedJobs();
 
 function saveSavedJobs() {
-  localStorage.setItem("jobtracker-saved", JSON.stringify(savedJobs));
+  localStorage.setItem("jobtrack-saved", JSON.stringify(savedJobs));
 }
 
 async function apiRequest(endpoint, options = {}) {
@@ -57,9 +59,25 @@ async function apiRequest(endpoint, options = {}) {
   return response.json();
 }
 
+function showMessage(container, message) {
+  container.innerHTML = `
+        <div class="col-12">
+            <div class="alert alert-danger" role="alert">
+                ${message}
+            </div>
+        </div>
+    `;
+}
+
 async function fetchJobs() {
   try {
-    jobs = await apiRequest("/jobs");
+    const response = await fetch(`${API_URL}/jobs`);
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch jobs");
+    }
+
+    jobs = await response.json();
 
     showJobs();
     showSavedJobs();
@@ -70,6 +88,11 @@ async function fetchJobs() {
   } catch (error) {
     console.error("Error fetching jobs:", error);
 
+    showMessage(
+      jobList,
+      "Unable to load jobs. Check that JSON Server is running on port 3000.",
+    );
+
     document.getElementById("job-results-message").textContent =
       "Could not load jobs.";
   }
@@ -77,7 +100,13 @@ async function fetchJobs() {
 
 async function fetchApplications() {
   try {
-    applications = await apiRequest("/applications");
+    const response = await fetch(`${API_URL}/applications`);
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch applications");
+    }
+
+    applications = await response.json();
 
     showJobs();
     showSavedJobs();
@@ -85,6 +114,16 @@ async function fetchApplications() {
     updateDashboard();
   } catch (error) {
     console.error("Error fetching applications:", error);
+
+    applicationList.innerHTML = `
+      <tr>
+        <td colspan="5">
+          <div class="alert alert-danger mb-0" role="alert">
+            Unable to load applications. Please check the API.
+          </div>
+        </td>
+      </tr>
+    `;
   }
 }
 
@@ -115,7 +154,58 @@ function showJobs(list = jobs) {
       );
 
       return `
-            
+            <div class="col-md-6 col-lg-4">
+                <article class="job-card">
+                    
+
+                    <h5>${job.title}</h5>
+
+                    <p class="job-company">
+                        ${job.company}
+                    </p>
+
+                    <div class="job-meta">
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            ${job.location}
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar3"></i>
+                            ${job.datePosted}
+                        </span>
+                    </div>
+
+                    <p class="job-description">
+                        ${job.description}
+                    </p>
+
+              
+
+                    <div class="job-actions">
+                        <button
+                            class="btn btn-primary apply-job"
+                            data-id="${job.id}"
+                            ${application ? "disabled" : ""}
+                        >
+                            ${application ? "Applied" : "Apply"}
+                        </button>
+
+                        <button
+                            class="btn btn-outline-secondary save-job ${
+                              isSaved ? "saved" : ""
+                            }"
+                            data-id="${job.id}"
+                            aria-label="${isSaved ? "Remove saved job" : "Save job"}"
+                            aria-pressed="${isSaved}"
+                        >
+                            <i class="bi ${
+                              isSaved ? "bi-bookmark-fill" : "bi-bookmark"
+                            }"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
         `;
     })
     .join("");
@@ -215,15 +305,6 @@ function showSavedJobs() {
       return `
             <div class="col-md-6 col-lg-4">
                 <article class="job-card">
-                    <div class="job-card-top">
-                        <div class="company-icon">
-                            ${job.company.charAt(0)}
-                        </div>
-
-                        <span class="job-type-badge">
-                            ${job.type}
-                        </span>
-                    </div>
 
                     <h5>${job.title}</h5>
 
@@ -265,8 +346,6 @@ function showSavedJobs() {
     .join("");
 }
 
-// ================= APPLY FOR JOB =================
-
 async function applyForJob(id) {
   const alreadyApplied = applications.some(
     (app) => String(app.jobId) === String(id),
@@ -293,9 +372,11 @@ async function applyForJob(id) {
   });
 
   try {
-    // POST creates a new application record in db.json.
-    const newApplication = await apiRequest("/applications", {
+    const response = await fetch(`${API_URL}/applications`, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         jobId: job.id,
         jobTitle: job.title,
@@ -304,6 +385,12 @@ async function applyForJob(id) {
         status: "Applied",
       }),
     });
+
+    if (!response.ok) {
+      throw new Error("Failed to submit application");
+    }
+
+    const newApplication = await response.json();
 
     applications.push(newApplication);
 
@@ -396,7 +483,8 @@ function showApplications() {
     .join("");
 }
 
-// PATCH updates the application on the server.
+/* updates the application on the server.*/
+
 applicationList.addEventListener("change", async (event) => {
   const select = event.target.closest(".status-select");
 
@@ -447,8 +535,6 @@ applicationList.addEventListener("change", async (event) => {
   }
 });
 
-// ================= DASHBOARD =================
-
 function updateDashboard() {
   const total = applications.length;
 
@@ -462,7 +548,6 @@ function updateDashboard() {
   document.getElementById("interview-count").textContent = interviews;
 }
 
-// Handles buttons in both Find Jobs and Saved Jobs.
 document.addEventListener("click", (event) => {
   const applyButton = event.target.closest(".apply-job");
   const saveButton = event.target.closest(".save-job");
@@ -481,24 +566,10 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// Update the active navigation item.
-document.querySelectorAll(".navbar .nav-link, .nav-cta").forEach((link) => {
-  link.addEventListener("click", () => {
-    const target = link.getAttribute("href");
-
-    document.querySelectorAll(".navbar .nav-link").forEach((navLink) => {
-      navLink.classList.toggle(
-        "active",
-        navLink.getAttribute("href") === target,
-      );
-    });
-  });
-});
-
 document.getElementById("current-year").textContent = new Date().getFullYear();
 
-async function initializeApp() {
+async function startApp() {
   await Promise.all([fetchJobs(), fetchApplications()]);
 }
 
-initializeApp();
+startApp();

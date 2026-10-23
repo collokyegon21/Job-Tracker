@@ -4,7 +4,7 @@
 :root {
   --primary: #2563eb;
   --primary-dark: #1d4ed8;
-  --heading: #172554;
+  --heading: #00061a;
   --text: #64748b;
   --border: #e2e8f0;
   --background: #f8fafc;
@@ -109,24 +109,6 @@ section {
   line-height: 1.8;
 }
 
-.search-box {
-  padding: 14px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.07);
-}
-
-.search-box .input-group-text,
-.search-box .form-control {
-  border-color: #e2e8f0;
-  background: #fff;
-}
-
-.search-box .form-control {
-  min-height: 46px;
-}
-
 .search-box .btn {
   min-height: 46px;
   font-weight: 600;
@@ -207,10 +189,6 @@ section {
   background: var(--background);
 }
 
-.tracking-section {
-  background: #eff6ff;
-}
-
 .section-heading {
   display: flex;
   align-items: center;
@@ -230,7 +208,6 @@ section {
   color: var(--text);
 }
 
-/* Job search filters */
 .filter-panel {
   padding: 22px;
   border: 1px solid var(--border);
@@ -238,26 +215,6 @@ section {
   background: #fff;
 }
 
-.form-label {
-  color: #334155;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.form-control,
-.form-select {
-  min-height: 44px;
-  border-color: #cbd5e1;
-  border-radius: 8px;
-}
-
-.form-control:focus,
-.form-select:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-}
-
-/* Job cards */
 .job-card {
   height: 100%;
   padding: 24px;
@@ -280,19 +237,6 @@ section {
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 20px;
-}
-
-.company-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  color: var(--primary);
-  background: #eff6ff;
-  font-size: 1.3rem;
-  font-weight: 700;
 }
 
 .job-card h5 {
@@ -436,54 +380,6 @@ section {
   font-weight: 700;
 }
 
-/* Tracking cards */
-.tracking-card {
-  height: 100%;
-  padding: 26px;
-  border: 1px solid #dbeafe;
-  border-radius: 15px;
-  background: #fff;
-}
-
-.tracking-card p {
-  margin-bottom: 12px;
-  color: var(--text);
-}
-
-.tracking-card h3 {
-  margin-bottom: 8px;
-  font-size: 2.2rem;
-  font-weight: 800;
-}
-
-.tracking-card span {
-  color: var(--text);
-  font-size: 0.85rem;
-}
-
-.progress-panel {
-  padding: 28px;
-  border: 1px solid #dbeafe;
-  border-radius: 15px;
-  background: #fff;
-}
-
-.progress-panel h5 {
-  font-weight: 700;
-}
-
-.progress {
-  height: 14px;
-  border-radius: 20px;
-  background: #e2e8f0;
-}
-
-.progress-bar {
-  background: var(--primary);
-  transition: width 0.3s ease;
-}
-
-/* Footer */
 .site-footer {
   padding: 40px 0 20px;
   color: #cbd5e1;

@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "Junior Web Developer",
-      "company": "Savanna Digital",
+      "company": "Moringa School",
       "category": "Software Development",
       "location": "Nairobi, Kenya",
       "type": "Full-time",
@@ -203,36 +203,36 @@
   ],
   "applications": [
     {
-      "jobId": "20",
-      "jobTitle": "Sales Development Representative",
-      "company": "Biashara Hub",
-      "dateApplied": "2026-10-22",
-      "status": "Applied",
-      "id": "HcO4-eGoURk"
-    },
-    {
       "jobId": "19",
       "jobTitle": "Project Coordinator",
       "company": "Ujenzi Youth Fund",
-      "dateApplied": "2026-10-22",
-      "status": "Applied",
-      "id": "MJwVEEN8S3A"
+      "dateApplied": "2026-10-23",
+      "status": "Interview",
+      "id": "GtvEj8iwyTo"
     },
     {
-      "jobId": "8",
-      "jobTitle": "Junior Data Analyst",
-      "company": "Hesabu Insights",
-      "dateApplied": "2026-10-22",
-      "status": "Applied",
-      "id": "MJlWw97eOmE"
+      "jobId": "20",
+      "jobTitle": "Sales Development Representative",
+      "company": "Biashara Hub",
+      "dateApplied": "2026-10-23",
+      "status": "Offer",
+      "id": "oMHayWohV4s"
     },
     {
-      "jobId": "2",
-      "jobTitle": "Mobile App Developer (Android)",
-      "company": "Mkononi Labs",
-      "dateApplied": "2026-10-22",
+      "jobId": "1",
+      "jobTitle": "Junior Web Developer",
+      "company": "Moringa School",
+      "dateApplied": "2026-10-23",
       "status": "Applied",
-      "id": "D8xdG1k23rE"
+      "id": "ojwY_P5RjhE"
+    },
+    {
+      "jobId": "18",
+      "jobTitle": "Technical Writer",
+      "company": "Maelezo Docs",
+      "dateApplied": "2026-10-23",
+      "status": "Applied",
+      "id": "SOc3QW65_PA"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
