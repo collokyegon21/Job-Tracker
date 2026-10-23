@@ -57,16 +57,6 @@ async function apiRequest(endpoint, options = {}) {
   return response.json();
 }
 
-function showMessage(container, message) {
-  container.innerHTML = `
-        <div class="col-12">
-            <div class="alert alert-danger" role="alert">
-                ${message}
-            </div>
-        </div>
-    `;
-}
-
 async function fetchJobs() {
   try {
     jobs = await apiRequest("/jobs");
@@ -79,8 +69,6 @@ async function fetchJobs() {
       `${jobs.length} jobs available`;
   } catch (error) {
     console.error("Error fetching jobs:", error);
-
-    showMessage(jobList, "Unable to load jobs. ");
 
     document.getElementById("job-results-message").textContent =
       "Could not load jobs.";
