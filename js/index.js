@@ -1,4 +1,4 @@
-const API_URL = "https://collokyegon21.github.io/Job-Tracker/db.json";
+const API_URL = "http://localhost:3000";
 
 let jobs = [];
 let applications = [];
@@ -80,10 +80,7 @@ async function fetchJobs() {
   } catch (error) {
     console.error("Error fetching jobs:", error);
 
-    showMessage(
-      jobList,
-      "Unable to load jobs. Check that JSON Server is running on port 3000.",
-    );
+    showMessage(jobList, "Unable to load jobs. ${error.message}.");
 
     document.getElementById("job-results-message").textContent =
       "Could not load jobs.";
