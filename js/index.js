@@ -219,7 +219,6 @@ document.getElementById("clear-filters").addEventListener("click", () => {
   filterJobs();
 });
 
-// Search from the home landing page.
 document.getElementById("home-search").addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -233,8 +232,6 @@ document.getElementById("home-search").addEventListener("submit", (event) => {
     behavior: "smooth",
   });
 });
-
-// ================= SAVE JOBS =================
 
 function toggleSavedJob(id) {
   const saved = savedJobs.some((savedId) => String(savedId) === String(id));
