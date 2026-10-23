@@ -85,16 +85,6 @@ async function fetchApplications() {
     updateDashboard();
   } catch (error) {
     console.error("Error fetching applications:", error);
-
-    applicationList.innerHTML = `
-            <tr>
-                <td colspan="5">
-                    <div class="alert alert-danger mb-0" role="alert">
-                        Unable to load applications. Please check the API.
-                    </div>
-                </td>
-            </tr>
-        `;
   }
 }
 
