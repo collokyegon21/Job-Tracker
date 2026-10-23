@@ -80,7 +80,7 @@ async function fetchJobs() {
   } catch (error) {
     console.error("Error fetching jobs:", error);
 
-    showMessage(jobList, "Unable to load jobs. ${error.message}.");
+    showMessage(jobList, "Unable to load jobs. ");
 
     document.getElementById("job-results-message").textContent =
       "Could not load jobs.";
