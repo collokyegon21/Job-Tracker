@@ -1,7 +1,7 @@
-const API_URL = "http://localhost:3000";
+//const API_URL = "http://localhost:3000";
 //const API_URL = "https://raw.githubusercontent.com/collokyegon21/Job-Tracker/main/db.json";
-//const API_URL = "https://collokyegon21.github.io/Job-Tracker/db.json";
-
+const API_URL = "https://collokyegon21.github.io/Job-Tracker/db.json";
+//const API_URL = "./db.json";
 let jobs = [];
 let applications = [];
 
@@ -23,7 +23,7 @@ const jobType = document.getElementById("job-type");
 
 function readSavedJobs() {
   try {
-    const saved = JSON.parse(localStorage.getItem("jobtrack-saved") || "[]");
+    const saved = JSON.parse(localStorage.getItem("jobtracker-saved") || "[]");
 
     return Array.isArray(saved) ? saved : [];
   } catch {
@@ -34,7 +34,7 @@ function readSavedJobs() {
 let savedJobs = readSavedJobs();
 
 function saveSavedJobs() {
-  localStorage.setItem("jobtrack-saved", JSON.stringify(savedJobs));
+  localStorage.setItem("jobtracker-saved", JSON.stringify(savedJobs));
 }
 
 async function apiRequest(endpoint, options = {}) {
@@ -88,10 +88,7 @@ async function fetchJobs() {
   } catch (error) {
     console.error("Error fetching jobs:", error);
 
-    showMessage(
-      jobList,
-      "Unable to load jobs. Check that JSON Server is running on port 3000.",
-    );
+    showMessage(jobList, "Unable to load jobs.");
 
     document.getElementById("job-results-message").textContent =
       "Could not load jobs.";
@@ -119,7 +116,7 @@ async function fetchApplications() {
       <tr>
         <td colspan="5">
           <div class="alert alert-danger mb-0" role="alert">
-            Unable to load applications. Please check the API.
+            Unable to load applications..
           </div>
         </td>
       </tr>
@@ -135,7 +132,7 @@ function showJobs(list = jobs) {
     jobList.innerHTML = `
             <div class="col-12">
                 <div class="empty-state">
-                    <i class="bi bi-search"></i>
+            
                     <h5>No jobs found</h5>
                     <p>Try a different search or filter.</p>
                 </div>
@@ -287,9 +284,8 @@ function showSavedJobs() {
     savedList.innerHTML = `
             <div class="col-12">
                 <div class="empty-state">
-                    <i class="bi bi-bookmark-heart"></i>
                     <h5>No saved jobs yet</h5>
-                    <p>Bookmark jobs to find them here later.</p>
+                    <p>Bookmark jobs to save them.</p>
                 </div>
             </div>
         `;
@@ -415,7 +411,7 @@ function showApplications() {
     applicationList.innerHTML = `
             <tr>
                 <td colspan="5" class="empty-state">
-                    No applications yet. Browse jobs and click Apply
+                    Browse jobs and click Apply
                     to start tracking your progress.
                 </td>
             </tr>
